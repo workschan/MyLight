@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
                     isopen = true;
                     btn_flash.setText(R.string.close);
                 } else {
+                    Parameters params = camera.getParameters();
+                    params.setFlashMode(Parameters.FLASH_MODE_OFF);
+                    camera.setParameters(params);
                     camera.stopPreview(); // 关掉亮灯
                     camera.release(); // 关掉照相机
                     isopen = false;
